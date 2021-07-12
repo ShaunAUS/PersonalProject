@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="jasonkim">
+    <title>리뷰입력 샘플</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="images/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="images/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="images/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- 기본 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/vendors.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- 사용자지정 CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+	
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+
+	<div class="background-image" data-background="url(images/bg.jpg)">
+	    <div class="min-vh-100 d-flex flex-column opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+	        <div class="container my-auto">
+	            <div class="row">
+	                <div class="col-md-9 col-lg-7 col-xl-5 mx-auto my-4">
+	                    <div class="panel center">
+	                        <figure class="add_bottom_30">
+	                            <a href="#0"><img src="images/logo.png" width="46" height="40" alt=""></a>
+	                        </figure>
+	                        <form class="input_style_1" method="post">
+	                            <div class="form-group">
+	                                <label for="full_name">이름</label>
+	                                <input type="text" name="full_name" id="full_name" class="form-control">
+	                            </div>
+	                            <div class="form-group mb-4">
+	                                <label for="email_address">이메일주소</label>
+	                                <input type="email" name="email_address" id="email_address" class="form-control">
+	                            </div>
+	                            <h6>이 서비스에 대한 평가를 해주세요?</h6>
+	                            <div class="review_block_numbers mb-4">
+	                                <ul class="clearfix">
+	                                    <li>
+	                                        <div class="container_numbers">
+	                                            <input type="radio" id="very_bad_1" name="question_1" value="Very bad">
+	                                            <label class="radio very_bad" for="very_bad_1">1</label>
+	                                        </div>
+	                                    </li>
+	                                    <li>
+	                                        <div class="container_numbers">
+	                                            <input type="radio" id="bad_1" name="question_1" value="Bad">
+	                                            <label class="radio bad" for="bad_1">2</label>
+	                                        </div>
+	                                    </li>
+	                                    <li>
+	                                        <div class="container_numbers">
+	                                            <input type="radio" id="average_1" name="question_1" value="Average">
+	                                            <label class="radio average" for="average_1">3</label>
+	                                        </div>
+	                                    </li>
+	                                    <li>
+	                                        <div class="container_numbers">
+	                                            <input type="radio" id="good_1" name="question_1" value="Good">
+	                                            <label class="radio good" for="good_1">4</label>
+	                                        </div>
+	                                    </li>
+	                                    <li>
+	                                        <div class="container_numbers">
+	                                            <input type="radio" id="very_good_1" name="question_1" value="Very Good">
+	                                            <label class="radio very_good" for="very_good_1">5</label>
+	                                        </div>
+	                                    </li>
+	                                </ul>
+	                                <div class="row justify-content-between mb-3">
+	                                    <div class="col-4">
+	                                        <small><em>아주 안좋음</em></small>
+	                                    </div>
+	                                    <div class="col-4 text-right">
+	                                        <small><em>아주 좋음</em></small>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <label for="message_field">리뷰평가내용</label>
+	                                <textarea name="message_field" id="message_field" class="form-control" style="height:150px;"></textarea>
+	                            </div>
+	                            <div class="form-group terms mb-4">
+								    <label class="container_check"><a href="#" data-toggle="modal" data-target="#terms-txt">이용약관</a>에 동의합니다.
+								        <input type="checkbox" name="agree" id="agree">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+	                            <button type="submit" class="btn_1 full-width">등록</button>
+	                        </form>
+	                    </div>
+	                </div>
+	                <!-- /col -->
+	            </div>
+	            <!-- /row -->
+	        </div>
+	        <!-- /container -->
+	        <div class="container py-2 copy white">© 2021 Jason Jaewoo, Kim</div>
+	    </div>
+	</div>
+	<!-- /background-image -->
+
+	<!-- Modal terms -->
+	<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="termsLabel">이용약관</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>동해 물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세.</p>
+					<p>동해 물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세.</p>
+					<p>동해 물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn_1" data-dismiss="modal">닫기</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="js/common_scripts.js"></script>
+	<script src="js/common_func.js"></script>
+
+</body>
+</html>
