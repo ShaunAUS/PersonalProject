@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--detail 페이지-->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
+
+  <th:block th:fragment="content">
+
+    <h1 class="mt-4">GuestBook Modify Page</h1>
+
+    <!--수정= 기존 디테일 글 그대로 일단 전송-->
+    <!--수정은   get방식 /guestbook/modify ,  post방식 /guestbook/modify 있다-->
+    <form th:action="/guestbook/modify" method="post">
+
+
+
+      <!--페이지 번호  -->
+      <!--수정후에 숨겨서 페이지 번호, 키워드,타입 보낸다.-->
+      <!--수정후 다시 목록페이지가면 검색조건, 페이지번호 유지하기위해-->
+      <input type="hidden" name="page" th:value="${requestDTO.page}">
+      <input type="hidden" name="type" th:value="${requestDTO.type}">
+      <input type="hidden" name="keyword" th:value="${requestDTO.keyword}">
+
+      <div class="form-group">
+        <label >Gno</label>
+        <input type="text" class="form-control" name="gno" th:value="${dto.gno}" readonly >
+      </div>
+      <!--//수정가능-->
+      <div class="form-group">
+        <label >Title</label>>
+        <input type="text" class="form-control" name="title" th:value="${dto.title}"  >
+      </div>
+      <!--//수정가능-->
+      <div class="form-group">
+        <label >Content</label>
+        <textarea class="form-control" rows="5" name="content" readonly>[[${dto.content}]]</textarea>
+      </div>
+      <div class="form-group">
+        <label >Writer</label>
+        <input type="text" class="form-control" name="writer" th:value="${dto.writer}" readonly>
+      </div>
+      <div class="form-group">
+        <label >RegDate</label>
+        <input type="text" class="form-control" name="regDate" th:value="${#temporals.format(dto.regDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
+      </div>
+      <div class="form-group">
+        <label >ModDate</label>
+        <input type="text" class="form-control" name="modDate" th:value="${#temporals.format(dto.modDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
+      </div>
+    </form>
+    <!--        <a th:href="@{/guestbook/modify(gno = ${dto.gno}, page=${requestDTO.page})}"><button type="button" class="btn btn-primary">Modify</button></a>-->
+
+    <!--        <a th:href="@{/guestbook/list(page=${requestDTO.page})}"><button type="button" class="btn btn-info">List</button></a>-->
+
+
+
+
+
+
+    <!--수정페이지 버튼 (이동)-->
+    <a th:href="@{/guestbook/modify(gno = ${dto.gno}, page=${requestDTO.page}, type=${requestDTO.type}, keyword =${requestDTO.keyword})}">
+      <button type="button" class="btn btn-primary" modifyBtn>Modify</button>
+    </a>
+
+    <!--목록페이지 버튼(이동)-->
+    <!--페이지 번호 유지해야함
+--> <a th:href="@{/guestbook/list(page=${requestDTO.page} , type=${requestDTO.type}, keyword =${requestDTO.keyword})}">
+    <button type="button" class="btn btn-info" listBtn>List</button>
+  </a>
+    <!--삭제버튼-->
+
+    <button type="button" class="btn btn-danger removeBtn">Remove</button>
+
+
+
+    <!--삭제버튼 이벤트-->
+    <script th:inline="javascript">
+
+            var actionForm = $("form");       <!--//form 태그 객체-->
+
+            $(".removeBtn").click(function(){
+
+                actionForm
+                    .attr("action", "/guestbook/remove")            <!--<form> 태그의 action 과 method 바뀐다--> <!--컨트룰러 remove실행-->
+                    .attr("method","post");
+
+                actionForm.submit();
+
+            })
+
+
+        <!--from get방식 modify  ->  post방식 modify-->
+        <!--수정버튼 이벤트-->
+
+         $(".modifyBtn").click(function(){
+
+
+            if(!confirm("수정하시겠습니가?"){
+              return
+            }
+
+
+            actionForm
+
+                .attr("action", "/guestbook/modify")
+                .attr("method","post");
+
+            actionForm.submit();
+
+            })
+
+
+
+          <!--수정후 리스트 페이지로 다시가는 버튼-->
+            $(".listBtn").click(function() {
+
+
+
+                var page = $("input[name='page']");
+                var type = $("input[name='type']");
+                var keyword = $("input[name='keyword']");
+
+
+                actionForm.empty();             <!-- //form 태그의 모든 내용을 지우고-->
+
+                actionForm.append(page);      <!--돌아갈 목록페이지 정보 추가-->
+                actionForm.append(type);
+                actionForm.append(keyword);
+
+                actionForm
+                    .attr("action", "/guestbook/list")
+                    .attr("method","get");
+
+               actionForm.submit();
+
+            })
+
+    </script>
+
+
+
+  </th:block>
+
+</th:block>
+
+
