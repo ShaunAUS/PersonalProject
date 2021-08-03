@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	>
+<meta charset="UTF-8">
+<title>todo</title>
+
+</head>
+<body>
+	<h2>등록내용</h2>
+
+	<th:block th:each="entity:${result}">
+	<div >
+		<table border="1">
+
+			<tr>
+				<th>id</th>
+				<td><div th:text="${entity.id}"></div></td>
+			</tr>
+			<tr>
+				<th>할일</th>
+				<td><div ><div th:text="${entity.content}"></div></div></td>
+			</tr>
+
+		</table>
+	</div>
+	</th:block>
+
+</body>
+</html>
