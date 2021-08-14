@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="setContent(contentPara)">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <Style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            .header{
+            width:100vw;
+            height:20vh;
+            background-color:aqua;
+            }
+            .content{
+            width:100vw;
+            height:80vh;
+            background-color:red
+            }
+              .footer{
+            width:100vw;
+            height:80vh;
+            background-color:green
+            }
+        </Style>
+
+        <div class="header">
+            <h1>header</h1>
+        </div>
+
+
+
+        <!--fragement setContent의  파라미터값 출력-->
+        <div class="content">
+            <th:block th:replace="${contentPara}">
+        </div>
+
+
+
+        <div class="footer">
+            <h1>footer</h1>
+        </div>
+</body>
+</th:block>
+</html>
