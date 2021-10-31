@@ -5,7 +5,7 @@
 
 - 기본적인 CRUD 와 Spring Data JPA를 이용한 게시판 만들기 + 페이징 작업까지 한 프로젝트 입니다.
 
-- 쿼리메서드,@Query, JPQL이 사용 되였습니다. Querydsl 은 사용되지 않았습니다.
+- 주로 쿼리메서드,@Query, JPQL이 사용 되였습니다. Querydsl 은 사용되지 않았습니다.
 
 ## 개발환경
 - JAVA
