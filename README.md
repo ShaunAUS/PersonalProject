@@ -14,3 +14,5 @@
 - SpringBoot 
 - Thymeleaf
 - Spring Data JPA
+
+학습내용은 기술블로그에 포스팅 하였습니다 -> https://velog.io/@wnsqud70?tag=P.J
